@@ -2,9 +2,7 @@
 
 import type React from "react";import {
   Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
+ 
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -137,22 +135,30 @@ export default function home() {
 
   return (
     <>
+      {" "}
       <div className="min-h-screen bg-blue-600 flex items-center justify-center p-4">
         <div className="w-full max-w-6xl mx-auto">
           <div className="text-center mb-8 mt-36">
             <h1 className="text-4xl font-bold mb-2">
-              <span className="text-[#CF78C6] text-7xl">Lifetime free</span>{" "}
-              <span className="text-white text-7xl">Access $0</span>
+              <span className="text-[#CF78C6] text-3xl md:text-7xl">
+                Lifetime free
+              </span>{" "}
+              <span className="text-white text-3xl md:text-7xl">Access $0</span>
             </h1>
             <h2 className="text-3xl font-bold">
-              <span className="text-white text-7xl"> Processing</span>{" "}
-              <span className="text-[#CF78C6] text-7xl">Fees POS</span>{" "}
-              <span className="text-white text-7xl">
+              <span className="text-white text-3xl md:text-7xl">
+                {" "}
+                Processing
+              </span>{" "}
+              <span className="text-[#CF78C6] text-3xl md:text-7xl">
+                Fees POS
+              </span>{" "}
+              <span className="text-white text-3xl md:text-7xl">
                 {" "}
                 <br /> Terminal
               </span>
             </h2>
-            <p className="text-white max-w-7xl text-4xl mt-12">
+            <p className="text-white max-w-7xl text-2xl md:text-4xl mt-12">
               Video (POS machine ke zero $ ke sath testimonial chale ge client
               ke koi bhi probel he form fill up karo)
             </p>
@@ -314,7 +320,6 @@ export default function home() {
           </div>
         </div>
       </div>
-
       {/* section -2 */}
       <div className="flex items-center justify-center min-h-screen bg-white relative p-8 overflow-hidden ">
         {/* Larger blue circle in center */}
