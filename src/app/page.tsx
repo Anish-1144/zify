@@ -69,9 +69,10 @@ export default function Home() {
         "ZifyPay offers a zero-cost hardware solution, competitive processing rates, no contracts, simple setup, and excellent customer support - making it the most cost-effective and flexible solution on the market.",
     },
   ]; 
-  const [openedItem, setOpenedItem] = useState(null);
+  const [openedItem, setOpenedItem] = useState<number | null>(null);
 
-  const toggleFAQ = (index : any) => {
+
+  const toggleFAQ = (index: number) => {
     setOpenedItem(openedItem === index ? null : index);
   }; 
  const posDevices = [
@@ -547,7 +548,6 @@ export default function Home() {
             <h2 className="text-blue-600 text-2xl font-bold text-center mb-6">
               FAQ
             </h2>
-
             <div className="space-y-2">
               {FAQ_ITEMS.map((item, index) => (
                 <div
@@ -572,6 +572,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            ;
           </div>
         </div>
       </div>
