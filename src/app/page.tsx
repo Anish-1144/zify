@@ -1,6 +1,9 @@
 "use client";
 
-import type React from "react";import {
+import type React  from "react";
+
+
+import {
   Card,
  
 } from "@/components/ui/card";
@@ -12,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function home() {
+export default function Home() {
   const FAQ_ITEMS = [
     {
       question: "What is ZifyPay's $0 POS Terminal?",
