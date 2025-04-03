@@ -1,12 +1,12 @@
 "use client";
 
 import type React  from "react";
+import { MonitorCheck } from "lucide-react";
 
 
 import {
   Card,
- 
-} from "@/components/ui/card";
+ } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 import { useState } from "react";
@@ -140,9 +140,16 @@ export default function Home() {
   return (
     <>
       {" "}
+      <div className="bg-blue-600 flex items-center justify-center">
+        <img
+          src="/image.png"
+          alt="Description"
+          className=" h-12 object-cover mt-12"
+        />
+      </div>
       <div className="min-h-screen bg-blue-600 flex items-center justify-center p-4">
         <div className="w-full max-w-6xl mx-auto">
-          <div className="text-center mb-8 mt-36">
+          <div className="text-center mb-8 mt-28">
             <h1 className="text-4xl font-bold mb-2">
               <span className="text-[#CF78C6] text-3xl md:text-7xl">
                 Lifetime free
@@ -171,14 +178,16 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-[41px] mt-32 mb-12">
             {/* Registration Form */}
             <div
-              className=" rounded-lg p-6 w-full md:w-5/12"
+              className=" rounded-lg p-6 w-full md:w-5/12 bg-transparent"
               style={{ backgroundImage: "url('/form.jpg')" }}
             >
               <h3 className="text-lg font-bold mb-4">Register Your Business</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name" className="mb-2 block">
+                    Name
+                  </Label>
                   <Input
                     id="name"
                     placeholder="Enter your name"
@@ -190,7 +199,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <Label htmlFor="phone">Phone</Label>
+                  <Label htmlFor="phone" className="mb-2 block">
+                    Phone
+                  </Label>
                   <Input
                     id="phone"
                     placeholder="Enter your phone"
@@ -202,7 +213,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="mb-2 block">
+                    Email
+                  </Label>
                   <Input
                     id="email"
                     placeholder="Enter your email"
@@ -215,7 +228,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <Label htmlFor="companyName">Company Name</Label>
+                  <Label htmlFor="companyName" className="mb-2 block">
+                    Company Name
+                  </Label>
                   <Input
                     id="companyName"
                     placeholder="Enter your Company Name"
@@ -227,7 +242,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <Label htmlFor="location">Location</Label>
+                  <Label htmlFor="location" className="mb-2 block">
+                    Location
+                  </Label>
                   <Input
                     id="location"
                     placeholder="Enter your location"
@@ -331,56 +348,7 @@ export default function Home() {
 
         {/* Cards container with improved width and responsiveness */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 z-10 relative w-full max-w-6xl mx-12  ">
-          {/* Left card (black) - increased width */}
-          <div className="bg-black text-white rounded-lg shadow-lg p-8 w-full border-2 border-blue-600">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              ZifyPay 0% Processing
-            </h2>
-
-            <div className="space-y-6">
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">0%</span>
-                <span>-</span>
-                <span>Interchange Fee</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">$0.00</span>
-                <span>-</span>
-                <span>Transaction Fee</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">$0.00</span>
-                <span>-</span>
-                <span>Authorization Fee</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">$0/mo</span>
-                <span>-</span>
-                <span>Statement Fee</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">$0/mo</span>
-                <span>-</span>
-                <span>Monthly Minimum</span>
-              </div>
-
-              <div className="flex justify-between text-xl">
-                <span className="font-bold">$0/mo</span>
-                <span>-</span>
-                <span>Online Access Fee</span>
-              </div>
-            </div>
-
-            <div className="mt-8 text-center font-semibold text-2xl">
-              No Junk Fees
-            </div>
-          </div>
-
-          {/* Right card (white) - increased width */}
+          {/* Right card (white) now first/left */}
           <div className="bg-white text-blue-900 rounded-lg shadow-lg p-8 w-full border-2 border-blue-600">
             <h2 className="text-3xl font-bold mb-8 text-center  ">
               Traditional Processing
@@ -430,6 +398,55 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Left card (black) now second/right */}
+          <div className="bg-black text-white rounded-lg shadow-lg p-8 w-full border-2 border-blue-600">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              ZifyPay 0% Processing
+            </h2>
+
+            <div className="space-y-6">
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">0%</span>
+                <span>-</span>
+                <span>Interchange Fee</span>
+              </div>
+
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">$0.00</span>
+                <span>-</span>
+                <span>Transaction Fee</span>
+              </div>
+
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">$0.00</span>
+                <span>-</span>
+                <span>Authorization Fee</span>
+              </div>
+
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">$0/mo</span>
+                <span>-</span>
+                <span>Statement Fee</span>
+              </div>
+
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">$0/mo</span>
+                <span>-</span>
+                <span>Monthly Minimum</span>
+              </div>
+
+              <div className="flex justify-between text-xl">
+                <span className="font-bold">$0/mo</span>
+                <span>-</span>
+                <span>Online Access Fee</span>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center font-semibold text-2xl">
+              No Junk Fees
+            </div>
+          </div>
         </div>
       </div>
       {/* section -3 */}
@@ -437,55 +454,60 @@ export default function Home() {
         <div className="max-w-5xl mx-auto mt-24">
           {/* Card Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {posDevices.map((device, index) => (
-              <Card
-                key={index}
-                className="bg-white rounded-lg overflow-hidden border-0 shadow-xl"
-              >
-                {/* Price Badge & Image Section */}
-                <div className="relative bg-white h-40 flex items-center px-4 border-2 border-gray-50 shadow-2xl shadow-gray-100 p-4">
-                  <Badge className="absolute  h-full left-3 bg-blue-600 text-white text-5xl font-bold px-4 py-2 rounded-md">
-                    {device.price}
-                  </Badge>
-                  <div className="flex-1"></div> {/* Push image to the right */}
-                  <img
-                    src={device.image}
-                    alt={device.name}
-                    className="h-32 w-32 md:h-40 md:w-40 object-contain"
-                  />
-                </div>
+            {posDevices
+              .slice() // Creates a shallow copy to avoid mutating the original array
+              .reverse()
+              .map((device, index) => (
+                <Card
+                  key={index}
+                  className="bg-white rounded-lg overflow-hidden border-0 shadow-xl"
+                >
+                  {/* Price Badge & Image Section */}
+                  <div className="relative bg-white h-40 flex items-center px-4 border-2 border-gray-50 shadow-2xl shadow-gray-100 p-4">
+                    <Badge className="absolute h-full left-3 bg-blue-600 text-white text-5xl font-bold  rounded-md">
+                      {device.price}
+                    </Badge>
+                    <div className="flex-1"></div>{" "}
+                    {/* Push image to the right */}
+                    <img
+                      src={device.image}
+                      alt={device.name}
+                      className="h-32 w-32 md:h-48 md:w-40 object-contain"
+                    />
+                  </div>
 
-                {/* Device Name */}
-                <div className="text-center pt-4 pb-2">
-                  <h3 className="text-lg font-bold">{device.name}</h3>
-                </div>
+                  {/* Device Name */}
+                  <div className="text-center pt-4 pb-2">
+                    <h3 className="text-lg font-bold">{device.name}</h3>
+                  </div>
 
-                {/* Features Grid */}
-                <div className="grid grid-cols-2 gap-0 px-4 pb-4">
-                  {device.features.map((feature, i) => (
-                    <div
-                      key={i}
-                      className="border-t border-r last:border-r-0 even:border-r-0 border-gray-200 p-3"
-                    >
-                      <div className="flex justify-center mb-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          className="w-6 h-6 text-gray-400"
-                        >
-                          <rect width="18" height="18" x="3" y="3" rx="2" />
-                        </svg>
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-2 gap-0 px-4 pb-4">
+                    {device.features.map((feature, i) => (
+                      <div
+                        key={i}
+                        className="border-t border-r last:border-r-0 even:border-r-0 border-gray-200 p-3"
+                      >
+                        <div className="flex justify-center mb-1">
+                          {/* <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            className="w-6 h-6 text-gray-400"
+                          >
+                            <rect width="18" height="18" x="3" y="3" rx="2" />
+                          </svg> */}
+                          <MonitorCheck />
+                        </div>
+                        <p className="text-sm text-center text-gray-700">
+                          {feature.name}
+                        </p>
                       </div>
-                      <p className="text-sm text-center text-gray-700">
-                        {feature.name}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            ))}
+                    ))}
+                  </div>
+                </Card>
+              ))}
           </div>
         </div>
       </div>
