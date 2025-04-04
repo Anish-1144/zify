@@ -122,21 +122,74 @@ export default function Home() {
    },
  ];
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    companyName: "",
-    location: "",
-    businessType: "",
-    acceptsCards: "",
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
+ interface FormData {
+   name: string;
+   phone: string;
+   email: string;
+   companyName: string;
+   location: string;
+   businessType: string;
+   acceptsCards: string;
+ }
 
+ const [formData, setFormData] = useState<FormData>({
+   name: "",
+   phone: "",
+   email: "",
+   companyName: "",
+   location: "",
+   businessType: "",
+   acceptsCards: "",
+ });
+
+ const handleSubmit = async (e: React.FormEvent) => {
+   e.preventDefault();
+   console.log("Form submitted:", formData);
+
+   try {
+     
+
+     const response = await fetch("/api/send-email", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
+
+     // Define the expected response type
+     interface ApiResponse {
+       success: boolean;
+       message: string;
+     }
+
+     const result = (await response.json()) as ApiResponse;
+
+     if (result.success) {
+       // Show success message - you could use a toast notification instead of alert
+       alert(result.message);
+       // Reset form
+       setFormData({
+         name: "",
+         phone: "",
+         email: "",
+         companyName: "",
+         location: "",
+         businessType: "",
+         acceptsCards: "",
+       });
+     } else {
+      
+       alert(result.message);
+     }
+   } catch (error) {
+     console.error("Error submitting form:", error);
+     alert("An error occurred. Please try again.");
+   } finally {
+     
+   }
+ };
   return (
     <>
       {" "}
